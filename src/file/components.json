@@ -1,0 +1,57 @@
+{
+    "form": [{
+            "name": "复选框",
+            "icon": "fa fa-check-square",
+            "comp": "check",
+            "select": false
+        },
+        {
+            "name": "单选框",
+            "icon": "fa fa-dot-circle-o",
+            "comp": "radio",
+            "select": false
+        },
+        {
+            "name": "下拉选择框",
+            "icon": "fa fa-caret-square-o-down",
+            "comp": "select",
+            "select": false
+        },
+        {
+            "name": "是否",
+            "icon": "fa fa-toggle-on",
+            "comp": "toggle",
+            "select": false
+        },
+        {
+            "name": "日期",
+            "icon": "fa fa-calendar-check-o",
+            "comp": "date",
+            "select": false
+        },
+        {
+            "name": "评分",
+            "icon": "fa fa-star",
+            "comp": "rate",
+            "select": false
+        },
+        {
+            "name": "颜色",
+            "icon": "fa fa-adjust",
+            "comp": "color",
+            "select": false
+        },
+        {
+            "name": "上传",
+            "icon": "fa fa-upload",
+            "comp": "update",
+            "select": false
+        },
+        {
+            "name": "滑块",
+            "icon": "fa fa-sliders",
+            "comp": "splide",
+            "select": false
+        }
+    ]
+}
