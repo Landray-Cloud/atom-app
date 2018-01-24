@@ -1,4 +1,4 @@
-# pre-atom-app
+# atom-app
 
 > A Vue.js project
 
