@@ -73,7 +73,7 @@ const etplget = async (ctx, next) => {
 		fs.mkdirSync(`./atom/${config.name}`)
 	}
 	fs.writeFileSync(`./atom/${config.name}/${config.name}.vue`, str)
-	fs.writeFileSync(`./atom/${config.name}/index.js`, `import ${config.upperName} from './${config.name}' \n export default ${config.upperName}`)
+	fs.writeFileSync(`./atom/${config.name}/index.js`, `import ${config.comps[0].upperName} from './${config.comps[0].name}' \n export default ${config.comps[0].upperName}`)
 
 	let compiler = webpack(build)
   compiler.run((err, stats) => {
