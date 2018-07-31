@@ -36,7 +36,8 @@ export default {
 		background-color: #3a4046;
 	}
 	.el-main {
-		height:~"calc(100% - 61px)";
+		height:~"calc(100% - 6px)";
+		overflow-y: hidden;
 	}
 }
 .el-radio-group {

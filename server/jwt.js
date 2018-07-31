@@ -11,16 +11,16 @@ module.exports = {
 		return token;
 	},
 	checkToken: (token) => {
-        let bool = true;
-        if(token){
-            let decoded = jwt.decode(token, 'ywork');
+		let bool = true;
+		if (token) {
+			let decoded = jwt.decode(token, 'ywork');
 			console.log(decoded);
-            if (decoded.exp <= Date.now() / 1000 || !decoded.account) {
-                bool = false;
-    		}
-        }else{
-            bool = false;
-        }
-        return bool;
+			if (decoded.exp <= Date.now() / 1000 || !decoded.account) {
+				bool = false;
+			}
+		} else {
+			bool = false;
+		}
+		return bool;
 	}
 }

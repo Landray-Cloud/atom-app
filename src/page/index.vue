@@ -41,16 +41,19 @@ export default {
 		load() {
 
 		},
+		com() {
+
+		},
 		edit(id) {
 			let obj = {
 				name: 'Edit'
-			};
+			}
 			if (id) {
 				obj.query = {
 					id: id
 				}
 			}
-			this.$router.push(obj);
+			this.$router.push(obj)
 		},
 		del(id) {
 			this.$confirm('此操作将永久删除该应用, 是否继续?', '提示', {
@@ -63,8 +66,8 @@ export default {
 					message: '删除成功!'
 				});
 			}).catch(() => {
-				
-			});
+
+			})
 		}
 	}
 }
