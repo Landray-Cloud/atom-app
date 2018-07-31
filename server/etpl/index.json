@@ -1,0 +1,12 @@
+{
+    "name": "task",
+    "moudleName": "km",
+    "comps": [{
+      "name": "list",
+      "upperName": "List"
+    }],
+    "param": {
+      "data": "fdName"
+    },
+    "paramStr": "{\"data\":\"fdName\"}"
+}

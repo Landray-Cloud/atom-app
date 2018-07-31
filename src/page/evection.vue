@@ -1588,14 +1588,14 @@ export default {
 	methods: {
 		getText(arr) {
 			let city = this.citys.find((item) => {
-				return item.value === arr[0];
+				return item.value === arr[0]
 			}).children.find((item) => {
-				return item.value === arr[1];
-			});
-			console.log(city);
+				return item.value === arr[1]
+			})
+			console.log(city)
 		},
 		change(arr) {
-			this.getText(arr);
+			this.getText(arr)
 		}
 	}
 }
