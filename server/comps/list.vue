@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <div v-for="l in list">{{l[param.data]}}</div>
-  </div>
+<div>
+  <div v-for="l in list">{{l[param.data]}}</div>
+</div>
 </template>
 
 <script>
 export default {
-    name: 'list',
-    props: ['param', 'list']
+  name: 'list',
+  props: ['param', 'list']
 }
 </script>
 

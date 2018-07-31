@@ -1,32 +1,34 @@
 <template>
-
+  
   <component :is="List" :param="param" :list="main"></component>
-
+  
 </template>
 
 <script>
 
-  import List from './comps/list'
+  import List from '../../comps/list'
 
 export default {
 	name: 'task',
   components: {
-
-
+    
+      
         List
-
-
+      
+    
   },
 	data() {
-		 main: {},
-     domain: '',
-     param: {},
-     paramStr: '{&quot;data&quot;:&quot;fdName&quot;}'
+    return {
+      main: {},
+      domain: '',
+      param: {},
+      paramStr: '{&quot;data&quot;:&quot;fdName&quot;}'
+    }
 	},
   props: ['obj'],
   mounted() {
     if (this.obj && this.obj.url) {
-      this.param = JSON.parse(this.paramStr.replace(/&quot;/g, '"'))
+      this.param = JSON.parse(this.paramStr)
       this.domain = this.obj.url.substring(0, this.obj.url.indexOf('km'))
       this.load()
     }

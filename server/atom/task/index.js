@@ -1,1 +1,2 @@
-import Task from './task' export default Task
+import undefined from './task' 
+ export default undefined

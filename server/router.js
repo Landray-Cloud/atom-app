@@ -4,10 +4,12 @@ const Util = require('./util')
 const jwt = require('./jwt')
 const fs = require('fs')
 const etpl = require('etpl')
+const webpack = require('webpack')
+const build = require('./build')
 
-Object.prototype.parseSqlResult = function() {
-	return JSON.parse(JSON.stringify(this))
-}
+// Object.prototype.parseSqlResult = function() {
+// 	return JSON.parse(JSON.stringify(this))
+// }
 
 const login = async (ctx, next) => {
 	let res = {},
@@ -67,13 +69,16 @@ const etplget = async (ctx, next) => {
 		config = JSON.parse(fs.readFileSync('./etpl/index.json')),
 		etplBuild = etpl.compile(etplTemp)
 	let str = etplBuild(config)
-	if(!fs.existsSync('./atom/task')){
-		console.log('111')
-		fs.mkdirSync('./atom/task')
+	if (!fs.existsSync(`./atom/${config.name}`)) {
+		fs.mkdirSync(`./atom/${config.name}`)
 	}
+	fs.writeFileSync(`./atom/${config.name}/${config.name}.vue`, str)
+	fs.writeFileSync(`./atom/${config.name}/index.js`, `import ${config.upperName} from './${config.name}' \n export default ${config.upperName}`)
 
-	fs.writeFileSync('./atom/task/task.vue', str)
-	fs.writeFileSync('./atom/task/index.js', "import Task from './task' export default Task")
+	let compiler = webpack(build)
+  compiler.run((err, stats) => {
+    console.log(err, stats)
+  })
 	ctx.response.body = {
 		errcode: 0,
 		errmsg: '成功'
