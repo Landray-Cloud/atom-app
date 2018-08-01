@@ -1,27 +1,29 @@
 <template>
   <!-- for: ${comps} as ${c} -->
-  <component :is="${c.upperName}" :param="param" :list="main"></component>
+  <${c.upperName} :param="param" :list="main"></${c.upperName}>
   <!-- /for -->
 </template>
 
 <script>
 <!-- for: ${comps} as ${c} -->
-  import ${c.upperName} from '../../comps/${c.name}'
+import ${c.upperName} from '../../comps/${c.name}'
 <!-- /for -->
 export default {
 	name: '${name}',
   components: {
-    <!-- for: ${comps} as ${c}, ${index} -->
-      <!-- if: ${index} > 0 -->
-        ,${c.upperName}
-      <!-- else -->
-        ${c.upperName}
-      <!-- /if -->
-    <!-- /for -->
+<!-- for: ${comps} as ${c}, ${index} -->
+  <!-- if: ${index} > 0 -->
+    ,${c.upperName}
+  <!-- else -->
+    ${c.upperName}
+  <!-- /if -->
+<!-- /for -->
   },
 	data() {
     return {
-      main: {},
+      main: [{
+        fdName: '金合欢花或或'
+      }],
       domain: '',
       param: {},
       paramStr: '${paramStr}'
@@ -30,9 +32,9 @@ export default {
   props: ['obj'],
   mounted() {
     if (this.obj && this.obj.url) {
-      this.param = JSON.parse(this.paramStr)
-      this.domain = this.obj.url.substring(0, this.obj.url.indexOf('${moudleName}'))
-      this.load()
+      this.param = JSON.parse(this.paramStr.replace(/&quot;/g, '"'))
+      // this.domain = this.obj.url.substring(0, this.obj.url.indexOf('${moudleName}'))
+      // this.load()
     }
   },
   methods: {

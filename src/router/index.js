@@ -5,6 +5,7 @@ import Regist from '@/page/regist'
 import Index from '@/page/index'
 import Edit from '@/page/edit'
 import Evection from '@/page/evection'
+import Test from '@/page/test'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
 			path: '/Evection',
 			name: 'Evection',
 			component: Evection
+		},
+		{
+			path: '/Test',
+			name: 'Test',
+			component: Test
 		}
 	]
 })
